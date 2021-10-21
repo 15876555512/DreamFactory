@@ -1,9 +1,9 @@
 /*
-城城领现金第二
+城城领现金第三
 cron 0 0-23/1 * * * 
-说明：只助力第二个CK
+说明：只助力第三个CK
  */
-const $ = new Env('城城领现金纯内部');
+const $ = new Env('城城领现金纯内部3');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let exchangeFlag = $.getdata('jdJxdExchange') || false;//是否开启自动抽奖，建议活动快结束开启，默认关闭
@@ -20,11 +20,11 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let insertCodes = []
 let inviteCodes = []
 !(async () => {
-    if (!cookiesArr[1]) {
+    if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
         return;
     }
-    console.log(`注意：只助力第二个CK，等待10秒`);
+    console.log(`注意：只助力第三个CK，等待10秒`);
     await $.wait(10000);
     let res = [];
     try{res = await getAuthorShareCode('');}catch (e) {}
@@ -47,7 +47,7 @@ let inviteCodes = []
     } else {
         console.log(`脚本默认在10.30日自动开启抽奖,如需现在自动抽奖请设置环境变量  JD_CITY_EXCHANGE 为true`);
     }
-    for (let i = 0; i < cookiesArr.length; i++) {
+    for (let i = 2; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
