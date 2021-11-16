@@ -18,7 +18,7 @@ except ImportError:
 		
 # 请定时为59秒，程序会自动计算延迟时间
 # 这里填cookie
-cookie = "pt_pin=; pt_key=;"
+cookie = "pt_key=AAJhd5_jADC9qsXx9AIgvQdK6zmuTKu-MmUt1ixBiNfr4ndQNehDJe9QphIhM71s01rC4xDQTdA;pt_pin=jd_73b6b016a21bc;"
 # 这里输入发送时间间隔 单位：s(秒)
 nterval_time = 0.5
 # 服务器性能延迟设置（根据服务器性能，执行程序需要一点时间）,单位 s (秒)
